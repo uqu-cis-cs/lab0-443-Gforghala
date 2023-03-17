@@ -1,4 +1,5 @@
 package edu.uqu.cs;
+import java.util.Scanner;
 /*
  * Lab 0 
  * CS 1312
@@ -24,6 +25,35 @@ public class App{
 *        TweetleBeetlePoodle 13 Tweetle 15 TweetleBeetle 17 TweetlePoodle 19 TweetleBeetle 
 */
 
+public static void twisters(){
+    for(int i=1; i<=20; i++)
+    {
+        if( i%2==0 || i%4==0 || i%6==0){
+
+        if(i%2==0)
+        {
+          System.out.print("Tweetle");
+        }
+
+        if(i%4==0)
+        {
+            System.out.print("Beetle");  
+        }
+
+        if(i%6==0)
+        {
+            System.out.print("Poodle");
+        }
+    }else
+        {
+            System.out.print(i);
+        }
+       System.out.print(" ");
+        
+}
+
+}
+
 /**
 * Write a method named "phoneKeypad" that takes a string parameter (str)
 * then it replaces each letter in (str) by a number that represnts it 
@@ -42,6 +72,65 @@ public class App{
 * Output: 2255464228626
 *
 */
+public static void phoneKeypad(String str)
+{
+    String output="";
+   for (char c : str.toUpperCase().toCharArray())
+   {
+    switch(c)
+    {
+      
+        case 'A':
+        case 'B':
+        case 'C':
+        output+="2";
+        break;
+        case 'D':
+        case 'E':
+        case 'F':
+        output+="3";
+        break;
+        case 'G':
+        case 'H':
+        case 'I':
+        output+="4";
+        break;
+        case 'J':
+        case 'K':
+        case 'L':
+        output+="5";
+        break;
+        case 'M':
+        case 'N':
+        case 'O':
+        output+="6";
+        break;
+        case 'P':
+        case 'Q':
+        case 'R':
+        case 'S':
+        output+="7";
+        break;
+        case 'T':
+        case 'U':
+        case 'V':
+        output+="8";
+        break;
+        case 'W':
+        case 'X':
+        case 'Y':
+        case 'Z':
+        output+="9";
+        break;
+    }
+
+   }
+   System.out.print(output);
+
+}
+
+
+
  
     public static void main(String [] args) {
         
@@ -49,9 +138,12 @@ public class App{
         /* Write your code here */
      
        //call method twisters()
+       twisters();
        //prompt user to enter a string 
+       Scanner scnr = new Scanner(System.in);
        //call method phoneKeypad(string)
-
+       String str = scnr.nextLine();
+       phoneKeypad(str);
 
     }
 
